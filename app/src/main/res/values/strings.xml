@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomBehavior</string>
+    <string name="ImageViewBehavior">com.alenbeyond.custombehavior.CustomBehavior</string>
+</resources>
