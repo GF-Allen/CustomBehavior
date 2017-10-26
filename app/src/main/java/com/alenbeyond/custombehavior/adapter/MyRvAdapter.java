@@ -1,48 +1,46 @@
-package com.alenbeyond.custombehavior;
+package com.alenbeyond.custombehavior.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.List;
-import java.util.Timer;
+import com.alenbeyond.custombehavior.R;
+
 
 /**
- * Created by alen on 17/2/21.
+ * Created by Allen on 2017/10/23.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyRvAdapter extends RecyclerView.Adapter<MyRvAdapter.ViewHolder> {
 
     private Context context;
-    private List<String> data;
 
-    public MyAdapter(Context context, List<String> data) {
+    public MyRvAdapter(Context context) {
         this.context = context;
-        this.data = data;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item_view, null);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.item_rv, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tv.setText(data.get(position));
+        holder.tv.setText("第" + position + "条数据");
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return 40;
     }
 
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tv;
 
         public ViewHolder(View itemView) {
@@ -50,4 +48,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             tv = (TextView) itemView.findViewById(R.id.tv);
         }
     }
+
 }

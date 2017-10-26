@@ -1,2 +1,2 @@
 # CustomBehavior
-自定义CoordinatorLayout的Behavior，实现View与View之间的联动
+自定义CoordinatorLayout的Behavior，实现QQ联系人tab动画
